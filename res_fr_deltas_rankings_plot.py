@@ -100,6 +100,7 @@ FAMILY_COLORS = {
     "FSR" : "#FF1E0E",
     "FSR1": "#FF7F0E",
     "FSR3.1.2": "#2CA02C",
+    "FSR3.1.4": "#EAFF00",
     "XeSS": "#9467BD",
 }
 DEFAULT_BAR_COLOR = "#4E79A7"
@@ -304,7 +305,7 @@ def main():
             continue
         base_row = g_base.iloc[0]
 
-        for active in ("Reflex", "FrameGen"):
+        for active in ("Reflex", "FrameGen", "FrameGenD", "FrameGenF"):
             g_active = g[g["active_mode"].str.lower() == active.lower()]
             if g_active.empty:
                 continue

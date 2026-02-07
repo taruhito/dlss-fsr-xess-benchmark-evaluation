@@ -74,6 +74,7 @@ FAMILY_COLORS: Dict[str, str] = {
     "FSR" : "#FF1E0E",
     "FSR1": "#FF7F0E",
     "FSR3.1.2": "#2CA02C",
+    "FSR3.1.4": "#EAFF00",
     "XeSS": "#9467BD",
 }
 DEFAULT_BAR_COLOR = "#4E79A7"
