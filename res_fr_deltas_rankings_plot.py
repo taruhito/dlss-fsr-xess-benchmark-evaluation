@@ -16,12 +16,16 @@ This script expects mutually-exclusive active-mode suffixes:
   - "..._Base"
   - "..._Reflex"
   - "..._FrameGen"
+  - "..._FrameGenD"
+  - "..._FrameGenF"
 
 It groups by:
   (resolution, metric, base_mode)
 and computes deltas:
   - Reflex vs Base   (if both exist)
   - FrameGen vs Base (if both exist)
+  - FrameGenD vs Base (if both exist)
+  - FrameGenF vs Base (if both exist)
 
 Delta definition (always "positive = active mode better")
 ---------------------------------------------------------
@@ -101,7 +105,7 @@ FAMILY_COLORS = {
 DEFAULT_BAR_COLOR = "#4E79A7"
 
 # Expected active-mode tags (case-insensitive)
-ACTIVE_TAGS = ("Base", "Reflex", "FrameGen")
+ACTIVE_TAGS = ("Base", "Reflex", "FrameGen", "FrameGenD", "FrameGenF")
 
 
 def _extract_family(mode: str) -> str:
