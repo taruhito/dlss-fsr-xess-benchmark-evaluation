@@ -276,7 +276,7 @@ def plot_perf_first(out_dir: Path, rankings_csv: Path, mem_clk_csv: Path) -> Non
         order = dp["mode"].tolist()
         plt.figure(figsize=(11.0, max(4, 0.50 * len(order))), dpi=DPI)
         ax = sns.barplot(data=dp, y="mode", x="fps_avg", order=order, color="#4E79A7", orient="h")
-        plt.title("FPS-primary ranking (avg FPS)  [toggle in script]")
+        plt.title("FPS-primary ranking (avg FPS)")
         plt.xlabel("fps_avg")
         plt.ylabel("")
         ax.xaxis.set_major_formatter(mtick.FormatStrFormatter("%.2f"))
