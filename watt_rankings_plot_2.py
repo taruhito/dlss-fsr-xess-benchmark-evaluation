@@ -63,6 +63,7 @@ AGG_FUNC = "median"
 FAMILY_COLORS: Dict[str, str] = {
     "DLSS": "#1F77B4",
     "FSR1": "#FF7F0E",
+    "FSR3.1": "#00FF91",
     "FSR3.1.2": "#2CA02C",
     "FSR3.1.4": "#EAFF00",
     "XeSS": "#9467BD",
