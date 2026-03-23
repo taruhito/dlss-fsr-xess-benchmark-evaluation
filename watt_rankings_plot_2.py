@@ -14,7 +14,7 @@ Input:
             mode
             real_watt_mean
             j_per_frame_real
-        Optional:
+        Extra:
             real_watt_median (also aggregate it for transparency)
 
 Aggregation:
@@ -31,7 +31,7 @@ Ranking:
 Outputs (under ./watt_out):
     family_total_watt.png   (horizontal bar ranking)
     family_total_j_per_frame.png   (horizontal bar ranking)
-    family_total_watt.csv   (rank (by j_per_frame_real) + family + aggregated columns)
+    family_total_watt.csv   (rank + family + aggregated columns)
 """
 
 from __future__ import annotations
@@ -129,9 +129,7 @@ def _build_family_table(df: pd.DataFrame, t: str) -> pd.DataFrame:
 
     # Ensure numeric columns are numeric (important for stability and typing)
     d["real_watt_mean"] = pd.to_numeric(d["real_watt_mean"], errors="coerce")
-    if "real_watt_median" in d.columns:
-        d["real_watt_median"] = pd.to_numeric(d["real_watt_median"], errors="coerce")
-        
+    d["real_watt_median"] = pd.to_numeric(d["real_watt_median"], errors="coerce")  
     d["j_per_frame_real"] = pd.to_numeric(d["j_per_frame_real"], errors="coerce")
     
     rows = []
@@ -139,11 +137,10 @@ def _build_family_table(df: pd.DataFrame, t: str) -> pd.DataFrame:
         row: Dict[str, Any] = {
             "family": str(fam),
             "family_real_watt_mean": _agg(g["real_watt_mean"]),
+            "family_real_watt_median": _agg(g["real_watt_median"]),
             "family_j_per_frame_real": _agg(g["j_per_frame_real"]),
             "modes": int(len(g)),
         }
-        if "real_watt_median" in g.columns:
-            row["family_real_watt_median"] = _agg(g["real_watt_median"])
         rows.append(row)
 
     fam_df = pd.DataFrame(rows)
@@ -210,10 +207,7 @@ def _plot_family_cost(df: pd.DataFrame, outfile: Path) -> None:
     span = x1 - x0
     pad = 0.012 * span if span > 0 else 0.05
 
-    # Optional extra annotation: aggregated median series (if present)
-    annotate_extra = "family_real_watt_median" in d.columns
-
-    # End-of-bar labels (value + optional extra)
+    # End-of-bar labels (value + extra median)
     mean_vals = d["family_real_watt_mean"].to_list()
     for i, val in enumerate(mean_vals):
         fv = _as_finite_float(val)
@@ -227,10 +221,9 @@ def _plot_family_cost(df: pd.DataFrame, outfile: Path) -> None:
             ha = "right"
 
         extra = ""
-        if annotate_extra:
-            med_val = _as_finite_float(d.loc[i, "family_real_watt_median"])
-            if med_val is not None:
-                extra = f" (median_raw={_fmt(med_val, 2)})"
+        med_val = _as_finite_float(d.loc[i, "family_real_watt_median"])
+        if med_val is not None:
+            extra = f" (median_raw={_fmt(med_val, 2)})"
 
         ax.text(xt, i, f"{_fmt(fv, 2)}{extra}", va="center", ha=ha, fontsize=9)
 
@@ -341,34 +334,26 @@ def main() -> None:
     except Exception as e:
         raise SystemExit(f"Failed reading {WATT_RANKINGS_CSV}: {e}")
 
-    need = {"mode", "real_watt_mean", "j_per_frame_real"}
+    need = {"mode", "real_watt_mean", "real_watt_median", "j_per_frame_real"}
     if not need.issubset(df.columns):
         raise SystemExit(f"Missing required columns: {sorted(need - set(df.columns))}")
 
-    turn = "w"
-    while turn != "e":
-        fam_df = _build_family_table(df, turn)
-        if fam_df.empty:
-            raise SystemExit("No families aggregated (empty DataFrame).")
+    fam_w_df = _build_family_table(df, "w")
+    fam_j_df = _build_family_table(df, "j")
+    if fam_w_df.empty or fam_j_df.empty:
+        raise SystemExit("No families aggregated (empty DataFrame).")
 
-        _ensure_dir(OUT_DIR)
+    _ensure_dir(OUT_DIR)
 
-        # Plot
-        if turn == "w":
-            _plot_family_cost(fam_df, OUT_DIR / "family_total_watt.png")
-            turn = "j"
-            continue
-        _plot_family_perf(fam_df, OUT_DIR / "family_total_j_per_frame.png")
-        turn = "e"
+    # Plot
+    _plot_family_cost(fam_w_df, OUT_DIR / "family_total_watt.png")
+    _plot_family_perf(fam_j_df, OUT_DIR / "family_total_j_per_frame.png")
 
     # Export one combined CSV (rank + aggregated columns)
-    if "family_real_watt_median" in fam_df.columns:
-        cols = ["rank", "family", "family_j_per_frame_real", "family_real_watt_mean", "family_real_watt_median", "modes"]
-    else:
-        cols = ["rank", "family", "family_j_per_frame_real", "family_real_watt_mean", "modes"]
+    cols = ["rank", "family", "family_real_watt_mean", "family_real_watt_median", "family_j_per_frame_real", "modes"]
 
     out_csv = OUT_DIR / "family_total_watt.csv"
-    fam_df[cols].sort_values("rank", na_position="last").to_csv(out_csv, index=False, encoding="utf-8-sig")
+    fam_w_df[cols].sort_values("rank", na_position="last").to_csv(out_csv, index=False, encoding="utf-8-sig")
     print(f"Wrote: {out_csv}")
 
     print("Done. Simplified family watt ranking generated (single CSV).")
