@@ -27,7 +27,7 @@ from typing import Any, Dict, List, Optional, Tuple
 # Example naming: DLSS_Quality_1080p_Reflex.csv
 OCAT_DIR = os.environ.get(
     "OCAT_DIR",
-    r"C:\Users\vince\Documents\OCAT\Captures\Clair Obscur Expedition 33"
+    r"C:\Users\vince\Documents\OCAT\Captures\S.T.A.L.K.E.R. 2 Heart of Chornobyl"
 )
 
 # KEEP_RAW_ROWS

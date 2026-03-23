@@ -9,8 +9,8 @@ from pathlib import Path
 from typing import Dict, List, Tuple, Any, Optional
 
 # Paths
-IDLE_CSV = r"C:\Users\vince\Documents\HWiNFO\Clair Obscur Expedition 33\idle\idle.CSV"
-SR_DIR   = r"C:\Users\vince\Documents\HWiNFO\Clair Obscur Expedition 33\sr"
+IDLE_CSV = r"C:\Users\vince\Documents\HWiNFO\S.T.A.L.K.E.R. 2 Heart of Chornobyl\idle\idle.CSV"
+SR_DIR   = r"C:\Users\vince\Documents\HWiNFO\S.T.A.L.K.E.R. 2 Heart of Chornobyl\sr"
 
 
 def detect_bom_encoding(data: bytes) -> Optional[str]:

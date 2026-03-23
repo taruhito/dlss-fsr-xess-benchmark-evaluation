@@ -49,7 +49,7 @@ import seaborn as sns
 import textwrap
 
 # ================== CONFIG ==================
-OCAT_OUT_DIR = Path("./ocat_out")
+OCAT_DIR = Path("./ocat_out")
 
 DPI = 140
 STYLE = "whitegrid"
@@ -64,6 +64,7 @@ COLOR_GPU     = "#F28E2B"   # GPU render
 # Family colors (consistent palette across all plots)
 FAMILY_COLORS: Dict[str, str] = {
     "DLSS": "#1F77B4",
+    "FSR" : "#FF1E0E",
     "FSR1": "#FF7F0E",
     "FSR3.1": "#00FF91",
     "FSR3.1.2": "#2CA02C",
@@ -199,7 +200,7 @@ def _compose_meta_line(meta_single: Dict[str, str], meta_unique: Dict[str, List[
 
 # Reserve bottom area and draw the meta string into it
 def _reserve_footer_and_draw(fig: Figure) -> None:
-    consistency_csv = OCAT_OUT_DIR / "ocat_consistency_check.csv"
+    consistency_csv = OCAT_DIR / "ocat_consistency_check.csv"
     meta_single, meta_unique = _collect_meta_from_consistency(consistency_csv)
     txt = _compose_meta_line(meta_single, meta_unique)
     if not txt:
@@ -491,14 +492,14 @@ def plot_family_total_latency(out_dir: Path, rankings_csv: Path) -> None:
 # ========================== Main ==========================
 def main():
     sns.set_style(STYLE)
-    rankings_csv = OCAT_OUT_DIR / "ocat_rankings_latency_first.csv"
+    rankings_csv = OCAT_DIR / "ocat_rankings_latency_first.csv"
 
-    plot_latency_rank(out_dir=OCAT_OUT_DIR, rankings_csv=rankings_csv)
-    plot_components_grouped(out_dir=OCAT_OUT_DIR, rankings_csv=rankings_csv)
-    plot_render_subcomponents(out_dir=OCAT_OUT_DIR, rankings_csv=rankings_csv)
-    plot_family_total_latency(out_dir=OCAT_OUT_DIR, rankings_csv=rankings_csv)
+    plot_latency_rank(out_dir=OCAT_DIR, rankings_csv=rankings_csv)
+    plot_components_grouped(out_dir=OCAT_DIR, rankings_csv=rankings_csv)
+    plot_render_subcomponents(out_dir=OCAT_DIR, rankings_csv=rankings_csv)
+    plot_family_total_latency(out_dir=OCAT_DIR, rankings_csv=rankings_csv)
 
-    print("OCAT plots written under:", OCAT_OUT_DIR)
+    print("OCAT plots written under:", OCAT_DIR)
 
 
 if __name__ == "__main__":

@@ -68,6 +68,7 @@ FPS_PRIMARY_RANKING = 1
 
 FAMILY_COLORS: Dict[str, str] = {
     "DLSS": "#1F77B4",
+    "FSR" : "#FF1E0E",
     "FSR1": "#FF7F0E",
     "FSR3.1": "#00FF91",
     "FSR3.1.2": "#2CA02C",

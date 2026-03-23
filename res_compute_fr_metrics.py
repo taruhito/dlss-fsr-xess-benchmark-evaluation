@@ -47,7 +47,7 @@ import pandas as pd
 from PIL import Image
 
 # ----------------------- Config --------------------------
-DEFAULT_ROOT = r"C:\Users\vince\Videos\Clair Obscur Expedition 33"
+DEFAULT_ROOT = r"C:\Users\vince\Videos\S.T.A.L.K.E.R. 2 Heart of Chornobyl"
 DEFAULT_DEVICE = "cuda:0"   # "cpu", "cuda", "cuda:0"
 DEFAULT_FR_METRICS = ["psnr", "ssim", "ms_ssim", "lpips", "dists"]
 DEFAULT_DOWNSAMPLE = 1  # 1=none, 2=half, 4=quarter...
