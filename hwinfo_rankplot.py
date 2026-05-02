@@ -17,13 +17,25 @@ import seaborn as sns
 
 
 # ============== CONFIG ===============================
-COST_FIRST_DIR = Path("./hwinfo_out_cost_first")   # contains sr_rankings_cost_first.csv
-PERF_FIRST_DIR = Path("./hwinfo_out_perf_first")   # contains sr_rankings_perf_first.csv, mem_clock_check.csv
+COST_FIRST_DIR = Path("./sh2_hwinfo_out_cost_first")   # contains sr_rankings_cost_first.csv
+PERF_FIRST_DIR = Path("./sh2_hwinfo_out_perf_first")   # contains sr_rankings_perf_first.csv, mem_clock_check.csv
 
 # Plot style
 DPI = 140
 STYLE = "whitegrid"
 SHOW = False
+
+# Fixed colors for SR family scatter plots.
+FAMILY_PALETTE = {
+    "DLSS": "#1F77B4",
+    "FSR" : "#FF1E0E",
+    "FSR1": "#FF7F0E",
+    "FSR1.0": "#FF7F0E",
+    "FSR3.1": "#00FF91",
+    "FSR3.1.2": "#2CA02C",
+    "FSR3.1.4": "#EAFF00",
+    "XeSS": "#9467BD",
+}
 
 # ============================================================
 # Ranking policy switch (must match hwinfo_rankings_2.py)
@@ -353,12 +365,17 @@ def plot_perf_first(out_dir: Path, rankings_csv: Path, mem_clk_csv: Path) -> Non
                 dd = d_cost[d_cost[col].notna()]
                 if dd.empty:
                     continue
+                hue_order = [family for family in FAMILY_PALETTE if family in set(dd["family"])]
+                if not hue_order:
+                    hue_order = sorted(dd["family"].dropna().unique().tolist())
                 plt.figure(figsize=(7.5, 6.0), dpi=DPI)
                 sns.scatterplot(
                     data=dd,
                     x=cost_col,
                     y=col,
                     hue="family",
+                    hue_order=hue_order,
+                    palette=FAMILY_PALETTE,
                     s=80,
                     alpha=0.85,
                 )
