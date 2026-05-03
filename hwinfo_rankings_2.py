@@ -37,7 +37,7 @@ import numpy as np
 # Step‑1 loader
 from hwinfo_readlogs import load_idle_and_sr, IDLE_CSV, SR_DIR
 
-OUT_DIR = r".\hwinfo_out_perf_first"
+OUT_DIR = r".\sh2_hwinfo_out_perf_first"
 WINDOW_SECONDS = 60
 
 # Weights (keep consistent with hwinfo_rankplot_2.py and any other consumer)

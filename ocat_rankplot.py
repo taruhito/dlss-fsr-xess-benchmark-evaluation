@@ -49,7 +49,7 @@ import seaborn as sns
 import textwrap
 
 # ================== CONFIG ==================
-OCAT_DIR = Path("./ocat_out")
+OCAT_DIR = Path("./sh2_ocat_out")
 
 DPI = 140
 STYLE = "whitegrid"
@@ -66,6 +66,7 @@ FAMILY_COLORS: Dict[str, str] = {
     "DLSS": "#1F77B4",
     "FSR" : "#FF1E0E",
     "FSR1": "#FF7F0E",
+    "FSR1.0": "#FF7F0E",
     "FSR3.1": "#00FF91",
     "FSR3.1.2": "#2CA02C",
     "FSR3.1.4": "#EAFF00",

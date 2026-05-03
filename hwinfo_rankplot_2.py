@@ -46,8 +46,8 @@ import matplotlib.ticker as mtick
 import seaborn as sns
 
 # Dirs
-COST_DIR = Path("./hwinfo_out_cost_first")
-PERF_DIR = Path("./hwinfo_out_perf_first")
+COST_DIR = Path("./sh2_hwinfo_out_cost_first")
+PERF_DIR = Path("./sh2_hwinfo_out_perf_first")
 
 COST_CSV = COST_DIR / "sr_rankings_cost_first.csv"
 PERF_CSV = PERF_DIR / "sr_rankings_perf_first.csv"
@@ -70,6 +70,7 @@ FAMILY_COLORS: Dict[str, str] = {
     "DLSS": "#1F77B4",
     "FSR" : "#FF1E0E",
     "FSR1": "#FF7F0E",
+    "FSR1.0": "#FF7F0E",
     "FSR3.1": "#00FF91",
     "FSR3.1.2": "#2CA02C",
     "FSR3.1.4": "#EAFF00",

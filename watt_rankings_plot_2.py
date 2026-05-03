@@ -48,8 +48,8 @@ import matplotlib.patheffects as pe
 
 # ============================ CONFIG ============================
 # Input / output paths
-WATT_RANKINGS_CSV = Path("./watt_out/watt_rankings.csv")
-OUT_DIR = Path("./watt_out")
+WATT_RANKINGS_CSV = Path("./sh2_watt_out/watt_rankings.csv")
+OUT_DIR = Path("./sh2_watt_out")
 
 # Plot style / rendering
 SHOW = False  # set True for interactive show()
@@ -67,6 +67,7 @@ FAMILY_COLORS: Dict[str, str] = {
     "DLSS": "#1F77B4",
     "FSR" : "#FF1E0E",
     "FSR1": "#FF7F0E",
+    "FSR1.0": "#FF7F0E",
     "FSR3.1": "#00FF91",
     "FSR3.1.2": "#2CA02C",
     "FSR3.1.4": "#EAFF00",

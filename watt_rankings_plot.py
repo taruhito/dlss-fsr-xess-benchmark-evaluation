@@ -44,11 +44,11 @@ import seaborn as sns
 
 # ================== CONFIG ==================
 # Input paths
-IDLE_WATT_CSV = r"C:\Users\vince\Documents\Watt\Clair Obscur Expedition 33\idle\idle.csv"
-WATT_SR_DIR   = r"C:\Users\vince\Documents\Watt\Clair Obscur Expedition 33\sr"
+IDLE_WATT_CSV = r"C:\Users\vince\Documents\Watt\Silent Hill 2\idle\idle.csv"
+WATT_SR_DIR   = r"C:\Users\vince\Documents\Watt\Silent Hill 2\sr"
 
 # Output directory
-OUT_DIR = Path("./watt_out")
+OUT_DIR = Path("./sh2_watt_out")
 
 # Plot config
 DPI = 140
@@ -57,7 +57,7 @@ SHOW = False  # set True for interactive show()
 
 # Optional join (mode -> fps_avg) for J/frame
 HWINFO_PERF_RANKINGS = Path(
-    r"C:\Users\vince\VSCode\SR_VScode_Project\HardWare_Rankings\hwinfo_out_perf_first\sr_rankings_perf_first.csv"
+    r"C:\Users\vince\VSCode\SR_VScode_Project\HardWare_Rankings\sh2_hwinfo_out_perf_first\sr_rankings_perf_first.csv"
 )
 # ===========================================
 

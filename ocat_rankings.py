@@ -38,7 +38,7 @@ import numpy as np
 from ocat_readlogs import load_ocat_dir, OCAT_DIR
 
 # CONFIG (output directory)
-OUT_DIR = Path("./ocat_out")
+OUT_DIR = Path("./sh2_ocat_out")
 
 
 # -----------------------

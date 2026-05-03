@@ -34,7 +34,7 @@ import numpy as np
 from hwinfo_readlogs import load_idle_and_sr, IDLE_CSV, SR_DIR
 
 # ============== CONFIG (output + window) ==============
-OUT_DIR = r".\hwinfo_out_cost_first"
+OUT_DIR = r".\sh2_hwinfo_out_cost_first"
 WINDOW_SECONDS = 60  # wall-time window; rows inside can be < 60 if sampling cadence > 1s
 # ======================================================
 
