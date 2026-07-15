@@ -222,9 +222,9 @@ If you use this repository, please cite the thesis work:
 This repository uses a dual-license model:
 
 - **Code** (e.g., scripts, source files, configs): licensed under **MIT**.  
-  See [LICENSE-CODE](https://github.com/taruhito/dlss-fsr-xess-benchmark-evaluation/LICENSE-CODE)
+  See [LICENSE-CODE](https://github.com/taruhito/dlss-fsr-xess-benchmark-evaluation/blob//main/LICENSE-CODE)
 - **Non-code content** (e.g., thesis text, figures, benchmark datasets/results, documentation): licensed under **CC BY 4.0**.  
-  See [LICENSE-CONTENT](https://github.com/taruhito/dlss-fsr-xess-benchmark-evaluation/LICENSE-CONTENT)
+  See [LICENSE-CONTENT](https://github.com/taruhito/dlss-fsr-xess-benchmark-evaluation/blob/main/LICENSE-CONTENT)
 
 If a file or subdirectory includes its own license notice, that specific notice takes precedence for that content.
 
