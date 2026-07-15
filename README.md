@@ -171,28 +171,6 @@ For each supported upscaler per game:
 
 ---
 
-## 📁 Suggested Repository Structure
-
-```text
-SR_Project/
-├─ data/
-│  ├─ raw/
-│  └─ processed/
-├─ scripts/
-│  ├─ preprocess/
-│  ├─ metrics/
-│  ├─ ranking/
-│  └─ plotting/
-├─ results/
-│  ├─ figures/
-│  └─ tables/
-├─ docs/
-│  └─ thesis/
-└─ README.md
-```
-
----
-
 ## 🔁 Reproducibility Notes
 
 To maximize repeatability:
