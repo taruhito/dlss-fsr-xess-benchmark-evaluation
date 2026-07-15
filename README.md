@@ -59,7 +59,7 @@ Core evaluation dimensions:
 ### Upscaling modes
 For each supported upscaler per game:
 - Quality
-- Balanced
+- Balance
 - Performance
 - (AA-native-like baseline where available, or DLAA substitute where needed)
 
