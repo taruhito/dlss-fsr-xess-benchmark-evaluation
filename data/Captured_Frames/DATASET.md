@@ -1,17 +1,17 @@
 # Dataset Access (Image Evaluation Frames)
 
-The full raw image dataset used for IQA/FR-IQA evaluation is hosted externally due to repository size limits.
+The full raw image dataset used for FR-IQA evaluation is hosted externally due to repository size limits.
 
 ## Download Links (Google Drive)
 
 - Raw image dataset (full):  
   https://drive.google.com/drive/folders/16T0uHvjEuWsCARLtAg0KymsZt38cAcK2?usp=sharing
 - Processed/clean subset:  
-  Virtua Fighter 5 R.E.V.O: https://drive.google.com/drive/folders/1tcfds0fB_JuB-1wxVqyN8JE-lB_zDDhP?usp=sharing
-  Clair Obscur Expedition 33: https://drive.google.com/drive/folders/1asrbhxaZQ5-yU0_ZnJG5CT8dygDOyVLK?usp=sharing
-  Ghost of Tsushima: https://drive.google.com/drive/folders/1Ss1E0NMSeUQAu2T1PZi98RoI--BWzNp_?usp=sharing
-  S.T.A.L.K.E.R. 2 Heart of Chornobyl: https://drive.google.com/drive/folders/1XnFY4nslNRA4UwxGWICp6WEGQQHCD5Px?usp=sharing
-  Silent Hill 2: https://drive.google.com/drive/folders/1qRfPzLK3AUwoPsKAuDPGmPf9wNZ7_YD9?usp=sharing  
+  - Virtua Fighter 5 R.E.V.O: https://drive.google.com/drive/folders/1tcfds0fB_JuB-1wxVqyN8JE-lB_zDDhP?usp=sharing
+  - Clair Obscur Expedition 33: https://drive.google.com/drive/folders/1asrbhxaZQ5-yU0_ZnJG5CT8dygDOyVLK?usp=sharing
+  - Ghost of Tsushima: https://drive.google.com/drive/folders/1Ss1E0NMSeUQAu2T1PZi98RoI--BWzNp_?usp=sharing
+  - S.T.A.L.K.E.R. 2 Heart of Chornobyl: https://drive.google.com/drive/folders/1XnFY4nslNRA4UwxGWICp6WEGQQHCD5Px?usp=sharing
+  - Silent Hill 2: https://drive.google.com/drive/folders/1qRfPzLK3AUwoPsKAuDPGmPf9wNZ7_YD9?usp=sharing  
   
 ## Notes
 
