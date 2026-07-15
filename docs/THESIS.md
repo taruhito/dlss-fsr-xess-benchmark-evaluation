@@ -1,4 +1,4 @@
-# Dataset Access (Captured OCAT CSV Logs)
+# Dataset Access (The Three Most Representative SR Upscalers DLSS, FSR, and XeSS for Real-Time Game Rendering: Benchmark Design, Evaluation Methods, and Testing Results)
 
 The full thesis is hosted externally due to repository size limits.
 
