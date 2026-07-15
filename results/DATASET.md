@@ -1,21 +1,20 @@
-# Dataset Access (Captured OCAT CSV Logs)
+# Dataset Access (Results)
 
-The full CSV dataset used for Latency evaluation is hosted externally due to repository size limits.
+The full results dataset is hosted externally due to repository size limits.
 
 ## Download Links (Google Drive)
 
-- Raw CSV dataset (full):  
-  https://drive.google.com/drive/folders/1O16HSQgGYNB4dGUTWskHlgom6837KZ7y?usp=sharing
+- Full results dataset:  
+  https://drive.google.com/drive/folders/1OqMcmF6koClledRc9-DAwHHcLbrLTSy4?usp=sharing
 - Processed/clean subset:  
-  - Virtua Fighter 5 R.E.V.O: https://drive.google.com/drive/folders/1wmRVHVHIOTRM1ZRAedSdjl_8srJy3fmV?usp=sharing
-  - Clair Obscur Expedition 33: https://drive.google.com/drive/folders/1cMXG7kZmF7gNg7TWZ4mdf_BDwwQkFdK-?usp=sharing
-  - Ghost of Tsushima: https://drive.google.com/drive/folders/1a_pPOerQfFSt3lTE8LZgjzCN71tViBlx?usp=sharing
-  - S.T.A.L.K.E.R. 2 Heart of Chornobyl: https://drive.google.com/drive/folders/1phLkWtU-r791mVfaig86lKlkiHtCIepy?usp=sharing
-  - Silent Hill 2: https://drive.google.com/drive/folders/1szJKLknUMX1DV32gQS1J2FFZ4lhVrY60?usp=sharing  
+  - HardWare_Rankings: https://drive.google.com/drive/folders/1K4V7pk6AXohSGu84yc4I1MgCFi7PctRg?usp=sharing
+  - Watt_Rankings: https://drive.google.com/drive/folders/15CfHDiiJE5L8PgFjOiLJDGT-wpd_JzGz?usp=sharing
+  - Latency_Rankings: https://drive.google.com/drive/folders/14TxuTHB34HIu5w5edl0yZbuWCEPFI0LF?usp=sharing
+  - ImageQuality_Rankings: https://drive.google.com/drive/folders/1YsZS4cOmvNgmiGmiXAIoVGmRPWOxLxQR?usp=sharing
   
 ## Notes
 
-- This repository does **not** track full raw CSV files in Git.
+- This repository does **not** track full raw files in Git.
 
 ## Version
 
