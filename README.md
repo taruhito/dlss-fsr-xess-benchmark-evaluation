@@ -228,10 +228,12 @@ If you use this repository, please cite the thesis work:
 
 ```bibtex
 @mastersthesis{SR_Upscalers_thesis_2026,
-  title  = {The Three Most Representative SR Upscalers DLSS, FSR, and XeSS for Real-Time Game Rendering: Benchmark Design, Evaluation Methods, and Testing Results},
-  author = {Vincent Lai},
-  school = {National Taipei University of Education},
-  year   = {2026}
+  title   = {The Three Most Representative SR Upscalers: DLSS, FSR, and XeSS for Real-Time Game Rendering --- Benchmark Design, Evaluation Methods, and Testing Results},
+  author  = {Vincent Lai},
+  school  = {National Taipei University of Education},
+  year    = {2026},
+  type    = {Master's thesis},
+  address = {Taipei, Taiwan}
 }
 ```
 
